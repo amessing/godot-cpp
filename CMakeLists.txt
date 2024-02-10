@@ -152,7 +152,7 @@ add_library(${PROJECT_NAME} STATIC
 		${HEADERS}
 		${GENERATED_FILES_LIST}
 )
-# add_library(godot::cpp ALIAS ${PROJECT_NAME})
+add_library(godot::cpp ALIAS ${PROJECT_NAME})
 
 include(GodotCompilerWarnings)
 
@@ -238,7 +238,7 @@ if ( $CACHE{GODOT_CPP_INSTALL} )
 			DESTINATION include
 	)
 
-	if (GODOT_GDEXTENSION_DIR AND EXISTS ${GODOT_GDEXTENSION_DIR})
+	if ( GODOT_GDEXTENSION_DIR AND EXISTS ${GODOT_GDEXTENSION_DIR} )
 		install(DIRECTORY ${GODOT_GDEXTENSION_DIR}/
 				DESTINATION include
 		)
