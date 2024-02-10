@@ -152,13 +152,13 @@ add_library(${PROJECT_NAME} STATIC
 		${HEADERS}
 		${GENERATED_FILES_LIST}
 )
-add_library(godot::cpp ALIAS ${PROJECT_NAME})
+# add_library(godot::cpp ALIAS ${PROJECT_NAME})
 
 include(GodotCompilerWarnings)
 
 target_compile_features(${PROJECT_NAME}
 	PRIVATE
-		cxx_std_17
+		cxx_std_20
 )
 
 target_compile_definitions(${PROJECT_NAME} PUBLIC
@@ -219,7 +219,7 @@ set_target_properties(${PROJECT_NAME}
 		OUTPUT_NAME "${OUTPUT_NAME}"
 )
 
-if ($CACHE{GODOT_CPP_INSTALL})
+if ( $CACHE{GODOT_CPP_INSTALL} )
 	install(TARGETS ${PROJECT_NAME}
 			EXPORT GodotCppTargets
 	)
