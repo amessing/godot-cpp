@@ -223,7 +223,7 @@ if ( $CACHE{GODOT_CPP_INSTALL} )
             EXPORT GodotCppTargets
     )
     install(EXPORT GodotCppTargets
-            FILE GodotTargets.cmake
+            FILE GodotCppTargets.cmake
             NAMESPACE godot::
             DESTINATION lib/cmake/GodotCpp
     )
